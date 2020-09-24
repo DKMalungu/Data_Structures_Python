@@ -495,5 +495,7 @@ dmypy.json
 # pytype static type analyzer
 .pytype/
 
-# End of https://www.toptal.com/developers/gitignore/api/python,pycharm+all,jupyternotebooks,pydev,pycharm,pycharm+iml
+# TextBook
 *.pdf
+# End of https://www.toptal.com/developers/gitignore/api/python,pycharm+all,jupyternotebooks,pydev,pycharm,pycharm+iml
+
