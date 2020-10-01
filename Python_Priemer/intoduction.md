@@ -159,15 +159,140 @@ Python allow a chained assignment such as x = y = 0
 | 2.  |  function/method calls container subscripts/slices | expr(...), expr[...]  |   |
 |  3. | exponentiation  |  ** |   |
 | 4.  |  unary operators | +expr, −expr,  <sup>~</sup>expr  |   |
-|  5. |   |   |   |
-|  6. |   |   |   |
-|  7. |   |   |   |
-|  8. |   |   |   |
-|  9. |   |   |   |
-|  10. |   |   |   |
-|  11. |   |   |   |
-|  12. |   |   |   |
-|  13. |   |   |   |
-|  14. |   |   |   |
-| 15.  |   |   |   |
-| 16.  |   |   |   |
+|  5. | multiplication, division  | *, /, //, %  |   |
+|  6. | addition, subtraction  |  +, - |   |
+|  7. |  bitwise shifting | <<, >>  |   |
+|  8. |  bitwise-and | &  |   |
+|  9. |  bitwise-xor |  ^ |   |
+|  10. | bitwise-or  |  | |   |
+|  11. | comparisons containment  | is, is not, ==, !=, <, <=, >, >=, in, not in  |   |
+|  12. | logical-not  | not expr  |   |
+|  13. | logical-and  |  and |   |
+|  14. |  logical-or |   or |   |
+| 15.  |  conditional | val if cond else val2  |   |
+| 16.  |  assignments |  =, +=, −=, =, etc. |   |
+
+Control Flow
+Syntax in python uses block of code. The colon character is used to delimit the beginning of a block of code that acts as a body for a control structure
+
+Conditionals 
+
+Conditional constructs (also known as if statements) provide a way to execute a chosen block of code based on the run-time evaluation of one or more Boolean
+expressions.
+
+    if first condition:
+        first body
+    elif second condition:
+        second body
+    elif third condition:
+        third body
+    else:
+        fourth body
+        
+Loops
+
+Python offers two distinct looping constructs A while loop allows general repetition based upon the repeated testing of a Boolean condition. A for loop provides
+convenient iteration of values from a defined series (such as characters of a string, elements of a list, or numbers within a given range).
+
+While Loop
+
+The syntax for a while loop in pythoin is as follows:
+
+    while condition:
+        body
+
+**Important** Python doesnt have a do while loop 
+
+For Loops 
+
+For lopss used on any type of iterable structure such as a list, tuple, str, dic of file
+
+    for element in iterable:
+        body
+        
+Break and Continue Statements
+
+Break statement is meant to terminate a while or for loop when executed within it body
+
+continue
+state causes the current iteration of a loop body to stop but with subsequent passes of the loop proceeding as expected.
+
+Function and Methods
+
+We use the general term function to describe a traditional, stateless function that is invoked without the context of a particular class or an instance of that class
+We use the more specific term method to describe a member function that is invoked upon a specific object using an object-oriented message passing syntax
+ 
+The first line, beginnning with the keyword def, serves as the function's signature.
+
+    def function_name(the, number, of, parameters, and, there, name):
+        The Body of the function
+        return statement
+
+Each time a function is called, Python creates a dedicated activation record that stores information relevant to the
+current call. This activation record includes what is known as a namespace to manage all identifiers that have local scope within the current call.
+
+Return Statement
+A return statement is used within the body of a function to indicate that the function should immediately cease execution, and that an expressed value should 
+be returned to the caller. If a return statement is executed without an explicit argument, the None value is automatically returned.
+
+Information Passing
+the identifiers used to describe the expected parameters are known as formal parameters, and the objects sent by the caller when invoking the function 
+are the actual parameters. Parameter passing in Python follows the semantics of the standard assignment statement.
+
+Files
+
+Files are typically accessed in Python beginning with a call to a built-in function, named open, that returns a proxy for interactions with the underlying file.
+    
+    Example:
+        variable = open('simple.txt')
+
+The open function accepts an optional second paramter that determines the access mode
+
+    Character Meaning
+    * 'r' open for reading (default)
+    * 'w' open for writing, truncating the file first
+    * 'x' create a new file and open it for writing
+    * 'a' open for writing, appending to the end of the file if it exists
+    * 'b' binary mode
+    * 't' text mode (default)
+    * '+' open a disk file for updating (reading and writing)
+    * 'U' universal newline mode (deprecated)
+
+Reading from a File
+
+The most basic command for reading via a proxy is the read method. When invoked on file proxy fp, as variable.read(k), the command returns a string 
+representing the next k bytes of the file, starting at the current position. Without a parameter, the syntax variable.read( ) returns the remaining 
+contents of the file in entirety
+
+Writing to a File
+
+When a file proxy is writable, for example, if created with access mode w or a , text can be written using methods write or writelines. For example, 
+if we define fp = open( results.txt , w ), the syntax fp.write( Hello World.\n ) writes a single line to the file with the given string.
+
+Exception Handling
+
+Exceptions are unexpected events that occur during the execution of a program.
+An exception might result from a logical error or an unanticipated situation.
+In Python, exceptions (also known as errors) are objects that are raised (or thrown) by
+code that encounters an unexpected circumstance. The Python interpreter can also
+raise an exception should it encounter an unexpected condition, like running out of
+memory. A raised error may be caught by a surrounding context that “handles” the
+exception in an appropriate fashion.
+
+|Class|Description
+|-----|-----------|
+|Exception|A base class for most error types
+|AttributeError| Raised by syntax obj.foo, if obj has no member named foo
+|EOFError|Raised if “end of file” reached for console or file input
+|IOError|Raised upon failure of I/O operation (e.g., opening file)
+|IndexError|Raised if index to sequence is out of bounds
+|KeyError|Raised if nonexistent key requested for set or dictionary
+|KeyboardInterrupt|Raised if user types ctrl-C while program is executing
+|NameError|Raised if nonexistent identifier used
+|StopIteration|Raised by next(iterator) if no element;
+|TypeError|Raised when wrong type of parameter is sent to a function
+|ValueError|Raised when parameter has invalid value
+|ZeroDivisionError|Raised when any division operator used with 0 as divisor
+
+
+
