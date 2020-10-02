@@ -294,5 +294,116 @@ exception in an appropriate fashion.
 |ValueError|Raised when parameter has invalid value
 |ZeroDivisionError|Raised when any division operator used with 0 as divisor
 
+Raising an Exception
 
+An exception is thrown by executing the raise statement, with an appropriate instance of an exception class as an argument that designates the problem.
+
+Syntax:
+
+    raise ['Error_class or Type']('Message that serves has a parameter')
+    
+Catching an Exception
+
+There are several philosophies regarding how to cope with possible exceptional cases when writing code.
+
+1. The philosophy for managing exceptional cases is to "look before you leap"
+
+The goal is to entirely avaoid the possibility of an excepton being raised through the use of a proactive conditional test.
+
+2. The second philososphy, often embraced by python programmers is that "it is easier to ask for forgiveness than it is to get permission. by Grace Hopper
+
+The sentiment is that we need not spend extra execution tine safeguarding against every possible exceptional case as long as there is mechanism for 
+coping with a problem after it arises.
+
+The most common way for catching error is using the try - except syntax
+
+syntax:
+
+    try:
+        (operation)
+    except [Error_class] as e:
+        action when error_class is encounted 
+        
+ Generators
+ 
+The most convenient technique for creating iterators in python is thought the use of generators. 
+A generator is implemented with a syntax that is very similar to a function, but instead of returning values, a yield statement is
+executed to indicate each element of the series.
+
+Additional Python Conveniences
+
+Conditional Expressions
+
+python supports a conditional expression syntax that can replace a simple control structure. 
+
+The general syntax:
+
+    expr1 if condition else expr2
+    
+Normal implementation
+
+    if n >= 0:
+        number = n
+    else:
+        number = -n
+    
+    result = foo(param)
+    
+Conditional expression implementation
+
+    number = n if n>=0 else -n
+    
+Comprehension Syntax
+
+1. List comprehension syntax
+
+syntax:
+
+    [expression for value in iterable if condition]
+ 
+Normal implementation
+
+    list_values = []
+
+    fro x in list_values:
+        if condition:
+            list_values.apend
+
+The above implementation is replicated for list, tuple, set and dictonary for comprehensive value generators
+
+Packing and Unpacking of sequences
+
+1. automatic packing
+
+    When a series of comma-separated expressions are given in a large context, they will be treated as a single tuple even if no enclose parentheses are provided.
+    
+        data = 2, 3, 4, 5
+        this will be represented as (2, 3, 4, 5) 
+    
+    use of packing in python is when returning multiple values from a function
+        
+        return a, y
+        this will be represented as (a, y)
+
+2. automatically unpacking
+
+    allowing on to assign a series of individual identifiers to the elements of a sequence
+        
+        a, b, c, d = range(1, 5)
+
+3. Simultaneous AAssignments
+
+    The combination of automatic packing and unpacking froms a technique know as simultaneous assignment wherby we explicitly asssign a series of 
+    values to a series of identifiers using as syntax:
+    
+        a, b, c, d = 1, 2, 3, 4
+        
+    in effect, the right-hand side of this assignment is automatically packed into a tiple and the automatically unpacked with its elements assigned 
+    to the identifiers on the left hand side.
+    
+ 
+Scope and Namespace
+
+With operation like x + y the name x ans y must have been previously associated with object that serve as values a NameError will be raised if no such 
+definition are found.   
 

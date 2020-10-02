@@ -11,8 +11,20 @@
 #         return salary+sells*0.10
 #
 # print('The gross slary for the sales oerson is: ',gross_salo())
+#
+# print('a','b','c',sep='\n')
+#
+# reply = input('Entrer x and y speated by space ')
+# open()
 
-print('a','b','c',sep='\n')
+n = input('enter a real number: ')
 
-reply = input('Entrer x and y speated by space ')
-open()
+if isinstance( n, (int, float)):
+    raise ValueError('The value is not a number')
+
+if n >= 0:
+    number = n
+else:
+    number = -n
+
+result = foo(number)
