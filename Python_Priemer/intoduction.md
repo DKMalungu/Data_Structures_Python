@@ -405,5 +405,50 @@ Packing and Unpacking of sequences
 Scope and Namespace
 
 With operation like x + y the name x ans y must have been previously associated with object that serve as values a NameError will be raised if no such 
-definition are found.   
+definition are found. The process of determinig the value associated with an identifier is know as name resolution. 
+
+When an identifier is assigned to a value the defination is made within a specific scope
+    
+    1. Top-level assignments are typically made in what is know as global scope
+    2. Assignments made within the body of a function have local scope to the function call.
+    
+Each of the above scope in python is represented using an abstraction know as namespaces. A namespace manages all identifiers that are currently defined
+in our given scope.
+Python implements a namespaces with its own dictionary that maps each identifying string to its associates values.
+
+ways of examining namespace:
+    
+    1. the function dir reports the namesof the identifiers in a given name spaces
+        
+    class Foo:
+        def __init__(self, a=5, b=10):
+            self.a = a
+            self.b = b
+        
+    object = Foo()
+    print(dir(object))
+    
+    output:
+    ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'a', 'b']
+
+    2. the function vars returns the full dictionary.
+        
+     class Foo:
+        def __init__(self, a=5, b=10):
+            self.a = a
+            self.b = b
+        
+    object = Foo()
+    print(vars(object))
+    
+    output:
+    {'a': 5, 'b': 10}
+    
+Modules and the Import Statements
+
+Python includes many values, function and classes that are organized in additional libraies known as modules that can be imported from within a program
+python import statement loads definitions from a module into the current namespace. 
+
+    example:
+        from math import pi, sqrt
 
