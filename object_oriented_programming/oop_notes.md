@@ -109,6 +109,110 @@ Advantages of Pseudocode
 *  Acts as a bridge bettwen the program and the algorith or flowchart.
 *  The main goal of a pseudo code is to explain what exactly each line of a program should do, hence making the code constractionphase easier for the programmer.
 
-### Coding Style and Documentation
+### 2.2.3 Coding Style and Documentation
+
+**Coding Style**
+
+The coding style implemented while reading this book is the official style guide for python code
+
+[Official Style Guide For Python Code link](http://www.python.org/dev/peps/pep-0008/)
+
+**Documentation**
+
+Python provides integrated support for embedding documentation directly in source code using a mechanism know as docstring
+The first statement within the body of a class or function is considered as the docstring.
+Docstring is punchuated using triple quotes(""" docstring here """)
+
+### 2.2.4 Testing and Debugging
+
+Testing is the process of experimentally checking the correctness of a program, while debugging is the process of tracking the execution of a program and discovering the error in it.
+
+**Testing**
+
+The aim of testing is to aim to execut the program on a representative subset of inputs
+Program often tend to fail on special cases of the input.
+Such special cases need to be carefully identified and tested.
+
+We should also consider special conditions for structures used by the program.
+
+Top-Down testing proceeds fro the top to the bottom of the programs hierarchy.
+Its typically used in conjunction with stubbing.
+
+Stubbing - a boot -strapping technique that replaces a lower-level component with a stub, a replacement for the componenet that simulates the functionality of the original.
+
+Example:
+
+    if function A calls function B to get a first line of a file, when testing A we can replace B with a stub that returns a fixed string.
+
+Bottom-up testing proceeds from lower-level components to higher- level components.
+
+ie. A class that doesnot depend upon any other classes can be tested before another class that depends on the former.
+This form of testing is usually described as **unit testing** as the functionality of a specific components is tested in isolation of the lager software project.
+
+Python provides several forms of support for automated testing.
+
+when functions or classes are defined in the a module, testing for that module can be emebedded in the same file
+
+using:
+
+    if __name__ == '__main__'
+
+        # Perform tests
+    this will ensure that the test can run withing the module but will not be run whem the module is imported. 
+
+Better suport for automation of unit testing is provided by python's **unittest** module.
+This framework allows the grouping of individual test case into lagger test suites and provides support for exacuting those suites and reporting or anamyzing the results of those test.
+As software is maintained the act of regression testing is used, whereby all previous test are re-executed to ensure that changes to the software don't introduce new bugs in the reviously tested components.
+
+**Debugging**
 
 
+
+
+## 2.3 Class Definitions
+
+A class serves as the primary means for abstraction in object-oriented programming.
+A class provides a set of behaviors in the from of **member functions** (also know as **methods**) with implementations that are common to all instance of thet class.
+A class also serves as a blueprint for its instance, effectively detemining the way that state information for each instance is represented in the form of attributes (also know as fields, instance variables or data members).
+
+**The self Identifier**
+
+
+**The Constructor**
+
+**Testing the Class**
+
+### 2.3.1 Operator Overloading and Python's Special Methods
+
+### 2.3.2 Iterators and generator
+
+Iterator is a bigger concept that generator.
+Iterator is an object whose class has a __next__ and __iter__ methods.
+Everytime you do next() call to the iterator object, you would get the next item in the sequence until the iterator object is exhausted and raise StopIteration.
+
+However, generator is a function that returns as iterator. It looks like normal function except that is used yield instead of return
+
+***Lazy Evaluation***
+
+Its an evaluation strategy which delays the evaluation of an expression until its value is needed and which also avoids repeated evaluation.
+Lazy evaluation can improve the efficiency of your code and save plenty of resources.
+
+The opposite of lazy evaluation is strict evaluation. Strict Evaluation is where evaluation is done immediately when the program regardless of use.
+
+## 2.4 Inheritance
+
+A natural way toorganize various structural componets of a software package is in a hierarchical fashion, with similar abstract definitions grouped together in a level-by-level manner that goes from specific to more general as one traverser up the hierarchy.
+The correspondence between levels if often referred to as an **"is a" relationship**
+This imlementation support reuse of code, in object-oriented programming, the mechanism for a modular and hierarchical organization is a technique know as **inheritance**
+This allows a new class to be defined based upon an existing class as the starting point.  
+In OOP the exisiting class is typically described  as the **base class, parent class** or **supper class**, while the newly defined class is known as the **subclass** or **child class**
+
+There are two ways in which a subclass can differentiate itself from its superclass.
+
+1.  A subclass may **specialize** an existing behavior by providing a new implementation that **overrides** an exesting method
+2.  A subclass may also **extend** it superclass by providing brand new methods
+
+**Protected Members**
+
+Members that are declared as protected are accessible to subclasses, but not to the general public, while member that are declared as private are not accessible to either.
+Python does not support formal acces control, but names beginning with a single underscore **(-)** are conventianally akin to protected, while names beginning with a double underscore (other than specal methods) are akin to provate.
