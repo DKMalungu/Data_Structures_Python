@@ -215,4 +215,32 @@ There are two ways in which a subclass can differentiate itself from its supercl
 **Protected Members**
 
 Members that are declared as protected are accessible to subclasses, but not to the general public, while member that are declared as private are not accessible to either.
-Python does not support formal acces control, but names beginning with a single underscore **(-)** are conventianally akin to protected, while names beginning with a double underscore (other than specal methods) are akin to provate.
+Python does not support formal acces control, but names beginning with a single underscore **(-)** are conventianally akin to protected, while names beginning with a double underscore (other than specal methods) are akin to private.
+
+### 2.4.2 Hierarchy of Numeric Progrssions
+As a second example of the use of inheritance, we develop a hierarchy of classes for iterating numeric progressions.
+A numeric progression is a squence of numbers, where each number dependes on one or more of the previous number.
+
+Example:
+
+    An arithmetic progression determines the next number by adding a fixed constant to the previous value, 
+    and a gemetirc progression determines the next number by multiplying the previous value by a fixed constant.
+
+![Screenshot from 2020-10-21 14-58-02.png](resources/Screenshot%20from%202020-10-21%2014-58-02.png)
+
+check implementation code in resources [progression.py](resources/progression.py)
+
+### 2.4.3 Abstract Base Classes
+
+When defining a group of classes as part of an inheritance hiererchy, one technique for avoiding repetition of code
+is to design a base class is to design a base class with common functionality that can be inherited by other classes
+that need it.
+
+In class object-oriented terminology we say a class is an **abstract base class** if its only purpose is to serve as a
+base class through inheritance.
+
+Formally:
+
+    an ***abstract base class*** is one that cannot be directly instatiated while a ***concrete class*** is one that can be instantiated
+
+The ***template method pattern***
